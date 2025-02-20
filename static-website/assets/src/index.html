@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html project zain rrahh</title>
+    <style>
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; 
+            background-color: #09eefe;
+            margin: 0;
+        }
+
+        .gif-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+       
+        .overlay {
+            position: absolute;
+            width: 100px; 
+            height: auto;
+            z-index: 2;
+        }
+
+        
+        .overlay-text {
+            position: absolute;
+            bottom: -40px; 
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            text-align: center;
+        }
+
+        @keyframes moveScaleRotate {
+        0% { transform: scale(1.2) rotate(0deg); }
+        50% { transform: scale(2.4) rotate(180deg); }
+        100% { transform: scale(1.2) rotate(360deg); }
+    }
+    </style>
+</head>
+<body style="background: linear-gradient(270deg, #ff00ff, #00ffff); background-size: 400% 400%; animation: bgShift 5s infinite alternate;">
+    
+    <div class="gif-container">
+        
+        <img src="heart-hearts.gif" alt="GIF" width="500">
+
+
+        
+        <img class="overlay" src="ayaka.png" alt="Overlay Image" style="animation: moveScaleRotate 3s linear infinite;">
+        
+        
+        <div class="overlay-text">Hello, perkenalkan, dia ayaka, dia istri dari zain :3</div>
+    </div> 
+
+    
+    <script>
+        let style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes bgShift {
+                0% { background-position: 0% 50%; }
+                100% { background-position: 100% 50%; }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
